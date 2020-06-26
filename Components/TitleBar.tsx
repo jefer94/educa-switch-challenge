@@ -1,9 +1,7 @@
-import React, { ReactElement } from 'react';
-import { Appbar } from 'react-native-paper';
+import React, { ReactElement } from 'react'
+import { Appbar } from 'react-native-paper'
 
 /**
- * The complete Triforce, or one or more components of the Triforce.
- *
  * @typedef {object} Props
  * @property {boolean} title - Title bar title.
  * @property {object} navigation - React navigation.

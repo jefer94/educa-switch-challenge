@@ -3,9 +3,9 @@ import { View, Text } from 'react-native'
 import { ReactElement } from 'react'
 
 /**
- * Home screen components.
+ * Home screen container.
  *
- * @returns {object} Home screen components.
+ * @returns {object} Home screen container.
  */
 export default function HomeScreen2(): ReactElement {
   return (
