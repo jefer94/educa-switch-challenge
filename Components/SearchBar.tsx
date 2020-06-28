@@ -20,7 +20,7 @@ import { Searchbar, TextInput } from 'react-native-paper'
 type Props = {
   readonly placeholder?: string
   readonly onChange?: (query: string) => void
-  readonly onBlur?: () => void
+  readonly onBlur?: (query: string) => void
 }
 
 /**
@@ -44,18 +44,21 @@ export default function SearchBar({ placeholder, onChange, onBlur }: Props): Rea
 
   /** On search blur. */
   function blur(): void {
-    if (onBlur) onBlur()
+    if (onBlur) onBlur(searchQuery)
   }
 
   return (
     <TextInput
       mode="flat"
+      underlineColor="#fd4a84"
+      // selectionColor="#fd4a84"
       label={placeholder || 'Search'}
       value={searchQuery}
       onChangeText={change}
       onBlur={blur}
       style={{
-        outline: 0,
+        backgroundColor: 'transparent',
+        color: '#fd4a84',
         borderLeft: 0,
         borderRight: 0,
         borderTop: 0

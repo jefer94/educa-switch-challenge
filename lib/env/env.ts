@@ -1,5 +1,5 @@
-import { Dictionary } from '@choco/types'
-import { memo } from '@choco/functional'
+import { Dictionary } from '../types'
+import { memo } from '../functional'
 import { keys, externalKey } from './keys'
 
 /** @module @choco/env */
@@ -39,13 +39,8 @@ export function resetEnv(): void {
  * env() // returns { pokemon: 'potato' }
  * @returns {string|object} Env var.
  */
-export function env(key?: string, value?: string): string | Dictionary {
+export function env(key: string, value?: string): string {
   const memokey = envKeyPrefix(key)
-
-  if (!key && !value) {
-    return (memo<readonly string[]>(keys) || []).reduce((obj, key) =>
-      ({ ...obj, [key]: memo(envKeyPrefix(key)) }), {})
-  }
 
   if (value) {
     process.env[key] = value

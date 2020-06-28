@@ -1,4 +1,4 @@
-import { memo } from '@choco/functional'
+import { memo } from '../functional'
 /** @module @choco/keychain */
 
 /**
