@@ -1,13 +1,15 @@
 import React, { ReactElement } from 'react'
 
+/** @module components */
+
 /**
- * @typedef {object} Props
+ * @typedef {object} ImageProps
  * @property {number} size - Image size.
  * @property {string} src - Image src.
  * @property {string} alt - Image alt text.
  */
 
-type Props = {
+type ImageProps = {
   readonly size: number,
   readonly src: string,
   readonly alt: string
@@ -16,10 +18,10 @@ type Props = {
 /**
  * Image component.
  *
- * @param {Props} props - Props.
+ * @param {ImageProps} props - Props.
  * @returns {object} Image component.
  */
-export default function Image({ size, src, alt }: Props): ReactElement {
+export default function Image({ size, src, alt }: ImageProps): ReactElement {
   const divStyle = {
     width: size,
     height: size,

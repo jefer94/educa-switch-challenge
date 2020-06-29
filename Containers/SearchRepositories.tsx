@@ -7,6 +7,8 @@ import github, { QueryRepositoriesByName } from '../graphql/github'
 import RepositoryCard from '../Components/RepositoryCard'
 import Repository from './Repository'
 
+/** @module containers */
+
 type Repository = {
   readonly node: {
     readonly nameWithOwner: string
@@ -24,16 +26,22 @@ type Repositories = {
   }
 }
 
-type Props = {
+/**
+ * @typedef {object} SearchRepositoriesProps
+ * @property {object} navigation - Navigation prop.
+ */
+
+type SearchRepositoriesProps = {
   readonly navigation: NavigationProp<any>
 }
 
 /**
  * Search repositories container.
  *
+ * @param {SearchRepositoriesProps} Props - Props.
  * @returns {object} Search repositories container.
  */
-export default function SearchRepositories({ navigation }: Props): ReactElement {
+export default function SearchRepositories({ navigation }: SearchRepositoriesProps): ReactElement {
   const [repositories, setRepositories] = useState<readonly Repository[]>([])
   const [query, setQuery] = useState<string>('')
 

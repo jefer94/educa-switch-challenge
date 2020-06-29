@@ -3,14 +3,16 @@ import { Card } from 'react-native-paper'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
+/** @module components */
+
 /**
- * @typedef {object} Props
+ * @typedef {object} RepositoryCardProps
  * @property {string} title - Repository card title.
  * @property {number} stargazers - Repository card stargazers.
  * @property {string} descriptionHTML - Repository card stargazers.
  */
 
-type Props = {
+type RepositoryCard = {
   readonly title: string
   readonly stargazers: number
   readonly descriptionHTML: string
@@ -19,10 +21,10 @@ type Props = {
 /**
  * Repository card component.
  *
- * @param {Props} props - Props.
+ * @param {RepositoryCardProps} props - Props.
  * @returns {object} Repository card component.
  */
-export default function RepositoryCard({ title, stargazers, descriptionHTML }: Props):
+export default function RepositoryCard({ title, stargazers, descriptionHTML }: RepositoryCard):
   ReactElement {
   return (
     <Card.Content

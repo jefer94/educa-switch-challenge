@@ -1,6 +1,8 @@
 import ApolloClient from 'apollo-boost'
 import { githubLocalStorageKey } from '../Contexts/Github'
 
+/** @module graphql */
+
 export default new ApolloClient({
   uri: 'https://api.github.com/graphql',
   request: (operation) => {

@@ -1,5 +1,7 @@
 import React, { ReactElement, useState } from 'react'
-import { Searchbar, TextInput } from 'react-native-paper'
+import { TextInput } from 'react-native-paper'
+
+/** @module components */
 
 /**
  * @callback OnChange
@@ -11,13 +13,13 @@ import { Searchbar, TextInput } from 'react-native-paper'
  */
 
 /**
- * @typedef {object} Props
+ * @typedef {object} SearchBarProps
  * @property {string} placeholder - Search bar placeholder.
  * @property {OnChange} onChange - Search bar on change function.
  * @property {OnBlur} onBlur - Search bar on blur function.
  */
 
-type Props = {
+type SearchBarProps = {
   readonly placeholder?: string
   readonly onChange?: (query: string) => void
   readonly onBlur?: (query: string) => void
@@ -26,10 +28,10 @@ type Props = {
 /**
  * Search bar component.
  *
- * @param {Props} param0 - Props.
+ * @param {SearchBarProps} Props - Props.
  * @returns {object} Search bar component.
  */
-export default function SearchBar({ placeholder, onChange, onBlur }: Props): ReactElement {
+export default function SearchBar({ placeholder, onChange, onBlur }: SearchBarProps): ReactElement {
   const [searchQuery, setSearchQuery] = useState<string>('')
 
   /**

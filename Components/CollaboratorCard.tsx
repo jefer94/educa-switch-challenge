@@ -2,13 +2,15 @@ import React, { ReactElement } from 'react'
 import { Card } from 'react-native-paper'
 import Image from './Image'
 
+/** @module components */
+
 /**
- * @typedef {object} Props
+ * @typedef {object} CollaboratorCardProps
  * @property {string} title - Collaborator card title.
  * @property {string} icon - Collaborator card icon.
  */
 
-type Props = {
+type CollaboratorCardProps = {
   readonly title: string
   readonly icon: string
   // readonly icon: ImageSourcePropType
@@ -17,10 +19,10 @@ type Props = {
 /**
  * Collaborator card component.
  *
- * @param {Props} props - Props.
+ * @param {CollaboratorCardProps} props - Props.
  * @returns {object} Collaborator card component.
  */
-export default function CollaboratorCard({ title, icon }: Props): ReactElement {
+export default function CollaboratorCard({ title, icon }: CollaboratorCardProps): ReactElement {
   return (
     <Card.Content
       style={{

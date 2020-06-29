@@ -1,10 +1,11 @@
 import React, { createContext, ReactElement, useState, useEffect } from 'react'
 import * as WebBrowser from 'expo-web-browser'
-import { useAuthRequest, makeRedirectUri, ResponseType } from 'expo-auth-session'
+import { useAuthRequest, makeRedirectUri } from 'expo-auth-session'
 import axios from 'axios'
 import { Platform } from 'react-native'
 import { githubId, githubSecret, githubTokenProvider } from '../env'
 
+/** @module contexts */
 /** @todo Logout from Github. */
 
 WebBrowser.maybeCompleteAuthSession()
@@ -30,21 +31,21 @@ type TokenResponse = {
 }
 
 /**
- * @typedef {object} Props
+ * @typedef {object} GithubContextProviderProps
  * @property {object} children - Github context children.
  */
 
-type Props = {
+type GithubContextProviderProps = {
   readonly children: ReactElement
 }
 
 /**
  * Github context.
  *
- * @param {Props} Props - Props.
+ * @param {GithubContextProviderProps} Props - Props.
  * @returns {object} Github context.
  */
-export function GithubContextProvider({ children }: Props): ReactElement {
+export function GithubContextProvider({ children }: GithubContextProviderProps): ReactElement {
   const [token, setToken] = useState<string>(localStorage.getItem(githubLocalStorageKey) || '')
   const [ready, setReady] = useState<boolean>(false)
   const redirectUri = makeRedirectUri({

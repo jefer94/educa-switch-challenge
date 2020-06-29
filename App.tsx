@@ -6,6 +6,8 @@ import Repository from './Containers/Repository'
 import { GithubContextProvider } from './Contexts/Github'
 import { host } from './env'
 
+/** @module main */
+
 const Stack = createStackNavigator()
 
 // GET https://github.com/login/oauth/authorize

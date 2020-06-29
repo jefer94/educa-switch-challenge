@@ -5,6 +5,8 @@ import TitleBar from '../Components/TitleBar'
 import CollaboratorCard from '../Components/CollaboratorCard'
 import github, { QueryRepositoryCollaborators } from '../graphql/github'
 
+/** @module containers */
+
 type Node = {
   readonly login: string
   readonly avatarUrl: string
@@ -19,7 +21,7 @@ type Repository = {
 }
 
 /**
- * @typedef {object} Props
+ * @typedef {object} RepositoryProps
  * @property {object} route - Route prop.
  */
 
@@ -31,17 +33,17 @@ type Params = {
 
 type ParamList = Record<string, Params>
 
-type Props = {
+type RepositoryProps = {
   readonly route: RouteProp<ParamList, any>
 }
 
 /**
  * Repository container.
  *
- * @param {Props} props - Props.
+ * @param {RepositoryProps} props - Props.
  * @returns {object} Repository container.
  */
-export default function Repository({ route }: Props): ReactElement {
+export default function Repository({ route }: RepositoryProps): ReactElement {
   const { owner, name, descriptionHTML } = route.params
   const [collaborators, setCollaborators] = useState<readonly Node[]>([])
 
