@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import { gql } from 'apollo-boost'
-import { NavigationProp, RouteProp } from '@react-navigation/native'
+import { RouteProp } from '@react-navigation/native'
 import TitleBar from '../Components/TitleBar'
 import CollaboratorCard from '../Components/CollaboratorCard'
 import github, { QueryRepositoryCollaborators } from '../graphql/github'

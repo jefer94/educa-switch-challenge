@@ -61,9 +61,9 @@ export default function SearchRepositories({ navigation }: Props): ReactElement 
         <SearchBar
           placeholder="search repositories"
           onBlur={(v) => setQuery(v)}
-          style={{
-            borderColor: '#fd4a84'
-          }}
+          // style={{
+          //   borderColor: '#fd4a84'
+          // }}
         />
       </div>
       {repositories.map((v, key) => {

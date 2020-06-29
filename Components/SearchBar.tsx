@@ -58,10 +58,10 @@ export default function SearchBar({ placeholder, onChange, onBlur }: Props): Rea
       onBlur={blur}
       style={{
         backgroundColor: 'transparent',
-        color: '#fd4a84',
-        borderLeft: 0,
-        borderRight: 0,
-        borderTop: 0
+        // color: '#fd4a84',
+        // borderLeft: 0,
+        // borderRight: 0,
+        // borderTop: 0
       }}
     />
   )

@@ -1,11 +1,11 @@
 import ApolloClient from 'apollo-boost'
-
-const token = ''
+import { githubLocalStorageKey } from '../Contexts/Github'
 
 export default new ApolloClient({
   uri: 'https://api.github.com/graphql',
   request: (operation) => {
-    // const token = localStorage.getItem('token')
+    const token = localStorage.getItem(githubLocalStorageKey)
+    console.log('in request', token)
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : ''
